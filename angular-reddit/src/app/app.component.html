@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1> 
+  
+  <form>
+    <h3>Add a Link</h3>
+    <div>
+      <label for="title" >Title:</label>
+      <input name="title" #newtitle>
+    </div>
+    <div>
+      <label for="link" >Link:</label>
+      <input name="link" #newlink>
+    </div>
+    
+    <button (click)="addArticle(newlink, newtitle)">
+      Submit link
+    </button>
+  </form>
+
+
+</div>
+
+
+
