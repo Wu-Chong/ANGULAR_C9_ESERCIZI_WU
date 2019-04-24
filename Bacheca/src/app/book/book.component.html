@@ -1,3 +1,13 @@
-<p>
-  book works!
-</p>
+<div class="container">
+
+ <form [formGroup]="myForm"  class="jumbotron">
+   <div class="form-group">
+     <input type="text" id="nomeInput" placeholder="Nome" name="nome"
+            [formControl]="myForm.controls['nome']" class="form-control">
+     <input type="text" id="cognomeInput" placeholder="cognome" name="cognome"
+            [formControl]="myForm.controls['cognome']" class="form-control">
+     
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {FormBuilder, FormGroup,Validators} from '@angular/forms';
+
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookComponent implements OnInit {
 
-  constructor() { }
+    myForm: FormGroup;
+    constructor(fb: FormBuilder) {
+      this.myForm = fb.group({
+        'nome': ['Inserisci nome', Validators.required],
+        'cognome': ['Inserisci cognome', Validators.required]
+    });
+ }
+
 
   ngOnInit() {
   }
