@@ -1,28 +1,49 @@
 <div class="container">
  <h2>Demo Form: Sku</h2>
- <form [formGroup]="myForm"
-       (ngSubmit)="onSubmit(myForm.value)"
-       class="jumbotron">
-
+ <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="jumbotron">
    <div class="form-group">
      <label for="skuInput">SKU</label>
-     <input type="text"
-           id="skuInput"
-           placeholder="SKU"
-           name="sku"
-           [formControl]="myForm.controls['sku']"
-           class="form-control">
+     <input type="text" id="skuInput" placeholder="SKU" name="sku"
+            [formControl]="myForm.controls['sku']" class="form-control">
    </div>
 
-   <div *ngIf="!myForm.controls['sku'].valid"
-         class="alert alert-danger">SKU is invalid
+   <div class="form-group">
+     <label for="nomeInput">Nome</label>
+     <input type="text" id="nomeInput" placeholder="Nome" name="nome"
+            [formControl]="myForm.controls['nome']" class="form-control">
    </div>
-   <div *ngIf="myForm.controls['sku'].hasError('required')"
-         class="alert alert-danger">SKU is required
+
+   <div class="form-group">
+     <label for="cognomeInput">Cognome</label>
+     <input type="text" id="cognomeInput" placeholder="Cognome" name="cognome"
+            [formControl]="myForm.controls['cognome']" class="form-control">
    </div>
+
    <button type="submit" class="btn btn-primary">Submit</button>
  </form>
-
- <div *ngIf="!myForm.valid"
- class="alert alert-danger">Form is invalid</div>
 </div>
+
+
+<!-- Sku
+<div *ngIf="!myForm.controls['sku'].valid" //Visualizza il div se !myForm.controls['sku'].valid == false
+     class="alert alert-danger">SKU is invalid
+</div>
+<div *ngIf="myForm.controls['sku'].hasError('required')" //Visualizza il div se il campo resta vuoto
+     class="alert alert-danger">SKU is required
+</div>
+
+Nome
+<div *ngIf="!myForm.controls['nome'].valid" //Visualizza il div se !myForm.controls['nome'].valid == false
+     class="alert alert-danger">Nome is invalid
+</div>
+<div *ngIf="myForm.controls['nome'].hasError('required')" //Visualizza il div se il campo resta vuoto
+     class="alert alert-danger">Nome is required
+</div>
+
+Cognome
+<div *ngIf="!myForm.controls['cognome'].valid" //Visualizza il div se !myForm.controls['cognome'].valid == false
+     class="alert alert-danger">Cognome is invalid
+</div>
+<div *ngIf="myForm.controls['cognome'].hasError('required')" //Visualizza il div se il campo resta vuoto
+     class="alert alert-danger">Cognome is required
+</div>-->

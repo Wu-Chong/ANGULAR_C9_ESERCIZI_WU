@@ -13,7 +13,7 @@ export class FormDemoComponent implements OnInit {
   myForm: FormGroup;
   constructor(fb: FormBuilder) {
     this.myForm = fb.group({
-      'sku': ['ABC123']
+      'sku': ['ABC123'], 'nome' : ['Nome'], 'cognome' : ['Cognome']
     });
   }
 
@@ -22,3 +22,4 @@ export class FormDemoComponent implements OnInit {
   }
 
 }
+
