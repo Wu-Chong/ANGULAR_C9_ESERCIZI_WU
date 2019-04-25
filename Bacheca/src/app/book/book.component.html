@@ -2,12 +2,28 @@
 
  <form [formGroup]="myForm"  class="jumbotron">
    <div class="form-group">
-     <input type="text" id="nomeInput" placeholder="Nome" name="nome"
+     <input type="text" #nome id="nomeInput"  name="nome"
             [formControl]="myForm.controls['nome']" class="form-control">
-     <input type="text" id="cognomeInput" placeholder="cognome" name="cognome"
+
+     <input type="text" #cognome id="cognomeInput" name="cognome"
             [formControl]="myForm.controls['cognome']" class="form-control">
-     
+
+     <input type="text" #indirizzo id="indirizzoInput" name="indirizzo"
+            [formControl]="myForm.controls['indirizzo']" class="form-control">
+
+     <input type="text" #phone id="phoneInput" name="phone"
+            [formControl]="myForm.controls['phone']" class="form-control">
+
+     <input type="text" #email id="emailInput" name="email"
+            [formControl]="myForm.controls['email']" class="form-control">
+
+     <input type="text" #preData id="preDataInput" name="preData"
+            [formControl]="myForm.controls['preData']" class="form-control">
+
+     <input type="text" #preOra id="preOra" name="preOra"
+            [formControl]="myForm.controls['preOra']" class="form-control">
+
    </div>
-   <button type="submit" class="btn btn-primary">Submit</button>
+   <button type="submit" (click) = "somma(nome, cognome, indirizzo, phone, email, preData, preOra)"  class="btn btn-primary" >Submit</button>
  </form>
 </div>
