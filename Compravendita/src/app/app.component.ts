@@ -15,9 +15,14 @@ export class AppComponent {
     this.myForm = fb.group({
         'nome': ['Inserire nome', Validators.required],  //crea una formControl, cioè un input per inserire un valore
         'cognome': ['Inserire cognome', Validators.required],
+        'user': ['Inserire username', Validators.required],
         'email': ['Inserire email', Validators.required],
         'password':['', Validators.required]
     });
+
+
+
+
   }
 
 }
