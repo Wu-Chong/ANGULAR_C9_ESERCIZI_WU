@@ -1,0 +1,27 @@
+<header class="bg-secondary">
+    <button class="btn text-light btn btn-success "> Log in </button>
+  </header>
+
+<div class="contenitore">
+  <!-- Si crea una form e si associa al form del ts -->
+  <form [formGroup] = logForm class="text-left p-3 item1" (ngSubmit)="onLog(logForm.value)">
+
+       Username
+      <input type="user" [formControl] = "logForm.controls['user']" placeholder="User" class="form-control mb-4">
+      <div *ngIf="!logForm.controls['user'].valid" class="alert alert-danger text-center">"User" non è valido</div>
+      <div *ngIf="logForm.controls['user'].hasError('required')" class="alert alert-danger text-center">"User" è richiesto</div>
+
+
+      Password
+      <input type='password' [formControl] = "logForm.controls['password']" placeholder="Password" class="form-control mb-4">
+      <div *ngIf="!logForm.controls['password'].valid" class="alert alert-danger text-center">"Password" non è valido</div>
+      <div *ngIf="logForm.controls['password'].hasError('required')" class="alert alert-danger text-center">"Password" è richiesto</div>
+
+
+
+    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!logForm.valid">Registrati</button>
+    <div *ngIf="!logForm.valid" class="alert alert-danger text-center mt-4">Il form non è valido</div>
+
+  </form>
+</div>
+
