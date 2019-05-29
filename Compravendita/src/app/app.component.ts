@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, Validators, FormGroup} from '@angular/forms';
+import { Utenti } from './utenti.model';
+import {Utente } from './mock-utenti';
 
 @Component({
   selector: 'app-root',
@@ -9,19 +11,8 @@ import {FormBuilder, Validators, FormGroup} from '@angular/forms';
 export class AppComponent {
   title = 'Compravendita';
 
-  myForm: FormGroup; // si crea un variabile di Oggetto FormGroup
-
-  constructor(fb : FormBuilder){
-    this.myForm = fb.group({
-        'nome': ['Inserire nome', Validators.required],  //crea una formControl, cioè un input per inserire un valore
-        'cognome': ['Inserire cognome', Validators.required],
-        'user': ['Inserire username', Validators.required],
-        'email': ['Inserire email', Validators.required],
-        'password':['', Validators.required]
-    });
-
-
-
+  users: Utenti[] = Utente;
+  constructor(){
 
   }
 
