@@ -1,10 +1,6 @@
-<header class="bg-secondary">
-    <button class="btn text-light btn btn-success "> Log in </button>
-  </header>
-
 <div class="contenitore">
   <!-- Si crea una form e si associa al form del ts -->
-  <form [formGroup] = logForm class="text-left p-3 item1" (ngSubmit)="onLog(logForm.value)">
+  <form [formGroup] = logForm class="text-left p-3 item1" (ngSubmit)="onLogin(logForm.value)" *ngIf="show">
 
        Username
       <input type="user" [formControl] = "logForm.controls['user']" placeholder="User" class="form-control mb-4">

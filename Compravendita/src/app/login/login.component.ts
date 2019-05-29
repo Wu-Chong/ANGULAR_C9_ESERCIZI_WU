@@ -13,15 +13,19 @@ export class LoginComponent implements OnInit {
     logForm: FormGroup;
    constructor(fb : FormBuilder){
     this.logForm = fb.group({
-        'nome': ['Inserire nome', Validators.required],  //crea una formControl, cioè un input per inserire un valore
-        'cognome': ['Inserire cognome', Validators.required],
         'user': ['Inserire username', Validators.required],
-        'email': ['Inserire email', Validators.required],
         'password':['', Validators.required]
     });
   }
 
   ngOnInit() {
+  }
+
+  onLogin(): boolean{
+    let t =0;
+    for (let i =0; i < this.userList.length; i++){
+      if (this.logForm.controls['user'].value == this.userList[i].userList)
+    }
   }
 
 }
