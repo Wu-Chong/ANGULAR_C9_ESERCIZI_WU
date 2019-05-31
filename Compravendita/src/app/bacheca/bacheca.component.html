@@ -13,23 +13,7 @@
   </form>
 </div>
 
-<div class="contenitore">
-  <!-- Si crea una form e si associa al form del ts -->
-  <form [formGroup] ="bacForm" class="text-left p-3 item1" (ngSubmit)="onBac(bacForm.value)">
 
-     Commento
-      <input type="text" [formControl] = "bacForm.controls['titolo']" placeholder="User" class="form-control mb-4">
-      <div *ngIf="!bacForm.controls['titolo'].valid" class="alert alert-danger text-center">"Titolo" non è valido</div>
-      <div *ngIf="bacForm.controls['titolo'].hasError('required')" class="alert alert-danger text-center">"Titolo" è richiesto</div>
-
-
-
-
-    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!bacForm.valid">Invia</button>
-    <div *ngIf="!bacForm.valid" class="alert alert-danger text-center mt-4">Il form non è valido</div>
-
-  </form>
-</div>
 
 
 <div class="contenitore">
@@ -37,16 +21,16 @@
   <li *ngFor="let comm of comments">{{comm.user.username}}: {{comm.titolo}}
     <form [formGroup] = "comForm" class="text-left p-3 item1" (ngSubmit)="addCom(comm.comments)">
 
-     Titolo
-      <input type="text" [formControl] = "comForm.controls['titolo']" placeholder="User" class="form-control mb-4">
-      <div *ngIf="!comForm.controls['titolo'].valid" class="alert alert-danger text-center">"Titolo" non è valido</div>
-      <div *ngIf="comForm.controls['titolo'].hasError('required')" class="alert alert-danger text-center">"Titolo" è richiesto</div>
+     Commento
+      <input type="text" [formControl] = "comForm.controls['commento']" placeholder="User" class="form-control mb-4">
+      <div *ngIf="!comForm.controls['commento'].valid" class="alert alert-danger text-center">"Commento" non è valido</div>
+      <div *ngIf="comForm.controls['commento'].hasError('required')" class="alert alert-danger text-center">"Commento" è richiesto</div>
 
 
 
 
-    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!bacForm.valid">Invia</button>
-    <div *ngIf="!bacForm.valid" class="alert alert-danger text-center mt-4">Il form non è valido</div>
+    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!comForm.valid">Invia</button>
+    <div *ngIf="!comForm.valid"></div>
 
   </form>
   <ul>

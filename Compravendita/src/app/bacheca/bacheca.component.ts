@@ -21,7 +21,7 @@ export class BachecaComponent implements OnInit {
     });
 
     this.comForm = fb.group({
-        'titolo': ['Inserire titolo', Validators.required]
+        'commento': ['Inserire commento', Validators.required]
     });
   }
 
@@ -37,8 +37,8 @@ export class BachecaComponent implements OnInit {
 
 
   addCom(comm: Comments[]): boolean{
-    if (this.bacForm.valid){
-      comm.push(new Comments(this.bacForm.controls['titolo'].value, this.user, new Array<Comments>()));
+    if (this.comForm.valid){
+      comm.push(new Comments(this.comForm.controls['commento'].value, this.user, new Array<Comments>()));
     }
     return false;
   }

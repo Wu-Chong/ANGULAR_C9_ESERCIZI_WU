@@ -1,7 +1,7 @@
 
 <div class="jumbotron">
   <h1>LOGIN</h1>
-  <form [formGroup] = logForm class="text-left p-3 item1" (ngSubmit)="onLogin(logForm.value)" *ngIf="show">
+  <form [formGroup] = logForm class="text-left p-3 item1" (ngSubmit)="onLogin()" *ngIf="show">
 
        Username
       <input type="user" [formControl] = "logForm.controls['user']" placeholder="User" class="form-control mb-4">
@@ -24,7 +24,7 @@
 
 <div class="alert alert-danger" *ngIf="!correct">Username o password errati!</div>
 <div *ngIf="!show">
- <button (click)="onLogout()" class="btn btn-danger">Logout</button>
+ <button (click)="onLogOut()" class="btn btn-danger">Logout</button>
  <app-bacheca [user]="user" [comments] ="comments"></app-bacheca>
 </div>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {FormBuilder, Validators, FormGroup} from '@angular/forms';
-import  { Utenti } from '../utenti.model'
+import  { Utenti } from '../utenti.model';
+import {Comments} from '../comments.model';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,11 @@ export class LoginComponent implements OnInit {
 
   @Input() userList: Utenti[];
   @Input() user: Utenti;
+  @Input() comments: Comments[];
   show: boolean = true;
   correct: boolean = true;
+
+
     logForm: FormGroup;
    constructor(fb : FormBuilder){
     this.logForm = fb.group({
@@ -27,7 +31,7 @@ export class LoginComponent implements OnInit {
   onLogin(): boolean{
     let t = -1;
     for(let i = 0; i<this.userList.length; i++){
-      if(this.logForm.controls['username'].value==this.userList[i].username && this.logForm.controls['password'].value==this.userList[i].password){
+      if(this.logForm.controls['user'].value==this.userList[i].username && this.logForm.controls['password'].value==this.userList[i].password){
         t = i;
       }
     }
@@ -43,6 +47,18 @@ export class LoginComponent implements OnInit {
     }else{
       this.correct = false;
     }
+    return false;
+  }
+
+
+  onLogOut(): boolean{
+    this.show = true;
+    this.user.username = "";
+    this.user.nome = "";
+    this.user.cognome = "";
+    this.user.email = "";
+    this.user.password = "";
+
     return false;
   }
 
