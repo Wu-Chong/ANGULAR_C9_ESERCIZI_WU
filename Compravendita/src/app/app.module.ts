@@ -7,13 +7,15 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegComponent } from './reg/reg.component';
 import { LoginComponent } from './login/login.component';
 import { BachecaComponent } from './bacheca/bacheca.component';
+import { BachecaCommentComponent } from './bacheca-comment/bacheca-comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegComponent,
     LoginComponent,
-    BachecaComponent
+    BachecaComponent,
+    BachecaCommentComponent
   ],
   imports: [
     BrowserModule, NgbModule, FormsModule, ReactiveFormsModule
