@@ -1,8 +1,17 @@
-<app-reg [userList]="users" ></app-reg>
 
-<ul>
-  <li *ngFor="let user of users">{{user.nome}} - {{user.cognome}}</li>
-</ul>
+
+
+<div class="float-left">
+  <app-reg [userList]="users" ></app-reg>
+  <div class="float-right">
+    <h1>Utenti Registrati</h1>
+    <div class="border border-primary rounded-sm ">
+    <ul class="ul1 ">
+      <li *ngFor="let user of users">{{user.nome}} - {{user.cognome}} : {{user.username}}</li>
+    </ul>
+    </div>
+  </div>
+</div>
 
 
 <app-login [userList]="users" [user] ="utenteLoggato"></app-login>

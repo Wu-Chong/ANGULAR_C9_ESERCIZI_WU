@@ -1,9 +1,5 @@
-<header class="bg-secondary">
-    <button class="btn text-light btn btn-success "> Log in </button>
-  </header>
-
 <div class="contenitore">
-
+<h1 class="text-center">Registrazione</h1>
   <form [formGroup] = myForm class="text-left p-3 item1" (ngSubmit)="onSubmit(myForm.value)">
 
     <div class="form-row">
@@ -42,7 +38,7 @@
 
 
     <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!myForm.valid">Registrati</button>
-    <div *ngIf="!myForm.valid" class="alert alert-danger text-center mt-4">Il form non è valido</div>
+    <div *ngIf="!myForm.valid"></div>
 
   </form>
 </div>

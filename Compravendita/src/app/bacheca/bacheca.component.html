@@ -7,7 +7,7 @@
       <div *ngIf="bacForm.controls['titolo'].hasError('required')" class="alert alert-danger text-center">"Titolo" è richiesto</div>
 
 
-    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!bacForm.valid">Registrati</button>
+    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!bacForm.valid">Invia</button>
     <div *ngIf="!bacForm.valid" class="alert alert-danger text-center mt-4">Il form non è valido</div>
 
   </form>

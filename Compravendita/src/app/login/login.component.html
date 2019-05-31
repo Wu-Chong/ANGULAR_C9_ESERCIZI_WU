@@ -1,4 +1,4 @@
-<div class="contenitore">
+<div>
   <form [formGroup] = logForm class="text-left p-3 item1" (ngSubmit)="onLogin(logForm.value)" *ngIf="show">
 
        Username
@@ -14,7 +14,7 @@
 
 
 
-    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!logForm.valid">Registrati</button>
+    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!logForm.valid">Invia</button>
     <div *ngIf="!logForm.valid" class="alert alert-danger text-center mt-4">Il form non è valido</div>
 
   </form>
