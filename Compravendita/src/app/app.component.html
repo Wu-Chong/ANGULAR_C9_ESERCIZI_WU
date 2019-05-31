@@ -3,3 +3,7 @@
 <ul>
   <li *ngFor="let user of users">{{user.nome}} - {{user.cognome}}</li>
 </ul>
+
+
+<app-login [userList]="users" [user] ="utenteLoggato"></app-login>
+<app-bacheca [user]="utenteLoggato" [comments] ="comments"></app-bacheca>

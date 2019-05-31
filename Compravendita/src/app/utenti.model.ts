@@ -1,8 +1,4 @@
 export class Utenti{
-  nome: string;
-  cognome: string;
-  username: string;
-  email: string;
-  password: string;
-
+  constructor(public nome: string,  public cognome: string, public username: string, public email: string,   public password: string){
+  }
 }

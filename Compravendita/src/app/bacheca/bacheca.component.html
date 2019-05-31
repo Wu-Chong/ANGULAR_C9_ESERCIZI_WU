@@ -1,0 +1,26 @@
+<div class="contenitore">
+  <!-- Si crea una form e si associa al form del ts -->
+  <form [formGroup] = bacForm class="text-left p-3 item1" (ngSubmit)="onBac(bacForm.value)">
+
+     Titolo
+      <input type="text" [formControl] = "bacForm.controls['titolo']" placeholder="User" class="form-control mb-4">
+      <div *ngIf="!bacForm.controls['titolo'].valid" class="alert alert-danger text-center">"Titolo" non è valido</div>
+      <div *ngIf="bacForm.controls['titolo'].hasError('required')" class="alert alert-danger text-center">"Titolo" è richiesto</div>
+
+
+
+
+    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!bacForm.valid">Registrati</button>
+    <div *ngIf="!bacForm.valid" class="alert alert-danger text-center mt-4">Il form non è valido</div>
+
+  </form>
+</div>
+
+
+<ul>
+  <li *ngFor="let comm of comments">{{comm.user.username}}: {{comm.titolo}}
+  <app-bacheca[user]="user" [comments]="comm.comments"></app-bacheca>
+  </li>
+</ul>
+
+
