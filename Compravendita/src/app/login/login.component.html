@@ -1,4 +1,6 @@
-<div>
+
+<div class="jumbotron">
+  <h1>LOGIN</h1>
   <form [formGroup] = logForm class="text-left p-3 item1" (ngSubmit)="onLogin(logForm.value)" *ngIf="show">
 
        Username
@@ -14,9 +16,15 @@
 
 
 
-    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!logForm.valid">Invia</button>
+    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!logForm.valid">Login</button>
     <div *ngIf="!logForm.valid" class="alert alert-danger text-center mt-4">Il form non è valido</div>
 
   </form>
+</div>
+
+<div class="alert alert-danger" *ngIf="!correct">Username o password errati!</div>
+<div *ngIf="!show">
+ <button (click)="onLogout()" class="btn btn-danger">Logout</button>
+ <app-bacheca [user]="user" [comments] ="comments"></app-bacheca>
 </div>
 

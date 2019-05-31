@@ -13,7 +13,7 @@ export class RegComponent implements OnInit {
 
   constructor(public fb : FormBuilder){
     this.myForm = fb.group({
-        'nome': ['Inserire nome', Validators.required], 
+        'nome': ['Inserire nome', Validators.required],
         'cognome': ['Inserire cognome', Validators.required],
         'user': ['Inserire username', Validators.required],
         'email': ['Inserire email', Validators.required],
@@ -26,7 +26,7 @@ export class RegComponent implements OnInit {
 
      onSubmit(): boolean{
     if (this.myForm.valid){
-      this.userList.push(new Utenti(this.myForm.controls['nome'].value, this.myForm.controls['cognome'].value, this.myForm.controls['username'].value, this.myForm.controls['email'].value, this.myForm.controls['password'].value));
+      this.userList.push(new Utenti(this.myForm.controls['nome'].value, this.myForm.controls['cognome'].value, this.myForm.controls['user'].value, this.myForm.controls['email'].value, this.myForm.controls['password'].value));
     }
     return false;
   }
