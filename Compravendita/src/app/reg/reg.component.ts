@@ -9,11 +9,11 @@ import { Utenti } from '../utenti.model';
 export class RegComponent implements OnInit {
 
   @Input() userList: Utenti[];
-  myForm: FormGroup; // si crea un variabile di Oggetto FormGroup
+  myForm: FormGroup;
 
   constructor(public fb : FormBuilder){
     this.myForm = fb.group({
-        'nome': ['Inserire nome', Validators.required],  //crea una formControl, cioè un input per inserire un valore
+        'nome': ['Inserire nome', Validators.required], 
         'cognome': ['Inserire cognome', Validators.required],
         'user': ['Inserire username', Validators.required],
         'email': ['Inserire email', Validators.required],

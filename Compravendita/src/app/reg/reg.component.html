@@ -3,15 +3,14 @@
   </header>
 
 <div class="contenitore">
-  <!-- Si crea una form e si associa al form del ts -->
+
   <form [formGroup] = myForm class="text-left p-3 item1" (ngSubmit)="onSubmit(myForm.value)">
 
     <div class="form-row">
-      <!-- si crea un input si associa al giusto input del ts, in questo caso il formControl 'nome'-->
+
       <div class="col">
         Nome
         <input [formControl] = "myForm.controls['nome']" placeholder="Nome" class="form-control mb-4">
-        <!-- si veficano se son presenti degli errori -->
         <div *ngIf="!myForm.controls['nome'].valid" class="alert alert-danger text-center">"Nome" non è valido</div>
         <div *ngIf="myForm.controls['nome'].hasError('required')" class="alert alert-danger text-center">"Nome" è richiesto</div>
       </div>

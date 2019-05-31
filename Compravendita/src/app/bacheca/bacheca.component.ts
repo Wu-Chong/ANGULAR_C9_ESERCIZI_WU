@@ -11,11 +11,16 @@ import {Utenti} from '../utenti.model';
 export class BachecaComponent implements OnInit {
 
    bacForm: FormGroup;
+   comForm: FormGroup;
    @Input() comments : Comments[];
    @Input() user: Utenti;
 
   constructor(fb : FormBuilder){
     this.bacForm = fb.group({
+        'titolo': ['Inserire titolo', Validators.required]
+    });
+
+    this.comForm = fb.group({
         'titolo': ['Inserire titolo', Validators.required]
     });
   }
@@ -26,6 +31,14 @@ export class BachecaComponent implements OnInit {
   onBac(): boolean{
     if (this.bacForm.valid){
       this.comments.push(new Comments(this.bacForm.controls['titolo'].value, this.user, new Array<Comments>()));
+    }
+    return false;
+  }
+
+
+  addCom(comm: Comments[]): boolean{
+    if (this.bacForm.valid){
+      comm.push(new Comments(this.bacForm.controls['titolo'].value, this.user, new Array<Comments>()));
     }
     return false;
   }
