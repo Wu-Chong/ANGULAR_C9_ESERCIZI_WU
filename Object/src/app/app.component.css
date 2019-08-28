@@ -6,6 +6,10 @@ html, body, * {
 }
 
 header{
+  background-color: white;
+  z-index: 1;
+  position:sticky;
+  top:0px;
   border: 1px  solid;
   border-radius: 5px;
   padding: 10px;
@@ -13,6 +17,7 @@ header{
 
 #title-header{
   font-family: Montserrat;
+  font-weight: 500;
   font-size: 30px;
   text-align: center;
 }

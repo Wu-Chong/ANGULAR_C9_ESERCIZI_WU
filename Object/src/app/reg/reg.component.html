@@ -6,34 +6,34 @@
 
       <div class="col">
         Nome
-        <input [formControl] = "myForm.controls['nome']" placeholder="Nome" class="form-control mb-4">
-        <div *ngIf="!myForm.controls['nome'].valid" class="alert alert-danger text-center">"Nome" non è valido</div>
-        <div *ngIf="myForm.controls['nome'].hasError('required')" class="alert alert-danger text-center">"Nome" è richiesto</div>
+        <input [formControl] = "myForm.controls['nome']" placeholder="Inserire il nome" class="form-control">
+        <div *ngIf="!myForm.controls['nome'].valid && myForm.controls['nome'].touched " class=" text-danger text-left">"Nome" non è valido</div>
+        <div *ngIf="myForm.controls['nome'].hasError('required') && myForm.controls['nome'].touched" class="text-danger text-left">"Nome" è richiesto</div>
       </div>
 
       <div class="col">
         Cognome
-        <input [formControl] = "myForm.controls['cognome']" placeholder="Cognome" class="form-control">
-        <div *ngIf="!myForm.controls['cognome'].valid" class="alert alert-danger text-center">"Cognome" non è valido</div>
-        <div *ngIf="myForm.controls['cognome'].hasError('required')" class="alert alert-danger text-center">"Cognome" è richiesto</div>
+        <input [formControl] = "myForm.controls['cognome']" placeholder="Inserire il cognome" class="form-control">
+        <div *ngIf="!myForm.controls['cognome'].valid && myForm.controls['cognome'].touched" class=" text-danger text-left">"Cognome" non è valido</div>
+        <div *ngIf="myForm.controls['cognome'].hasError('required') && myForm.controls['cognome'].touched" class=" text-danger text-left">"Cognome" è richiesto</div>
       </div>
     </div>
 
-       Username
-      <input type="user" [formControl] = "myForm.controls['user']" placeholder="User" class="form-control mb-4">
-      <div *ngIf="!myForm.controls['user'].valid" class="alert alert-danger text-center">"User" non è valido</div>
-      <div *ngIf="myForm.controls['user'].hasError('required')" class="alert alert-danger text-center">"User" è richiesto</div>
+       <br>Username
+      <input type="user" [formControl] = "myForm.controls['user']" placeholder="Inserire il username" class="form-control ">
+      <div *ngIf= "!myForm.controls['user'].valid && myForm.controls['user'].touched" class="text-danger text-left">"User" non è valido</div>
+      <div *ngIf="myForm.controls['user'].hasError('required') && myForm.controls['user'].touched" class=" text-danger text-left">"User" è richiesto</div>
 
-      Email
-      <input type="email" [formControl] = "myForm.controls['email']" placeholder="Email" class="form-control mb-4">
-      <div *ngIf="!myForm.controls['email'].valid" class="alert alert-danger text-center">"Email" non è valido</div>
-      <div *ngIf="myForm.controls['email'].hasError('required')" class="alert alert-danger text-center">"Email" è richiesto</div>
+      <br>Email
+      <input type="email" [formControl] = "myForm.controls['email']" placeholder="Inserire l'email" class="form-control ">
+      <div *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].touched" class=" text-danger text-left">"Email" non è valido</div>
+      <div *ngIf="myForm.controls['email'].hasError('required') && myForm.controls['email'].touched" class=" text-danger text-left">"Email" è richiesto</div>
 
 
-      Password
-      <input type='password' [formControl] = "myForm.controls['password']" placeholder="Password" class="form-control mb-4">
-      <div *ngIf="!myForm.controls['password'].valid" class="alert alert-danger text-center">"Password" non è valido</div>
-      <div *ngIf="myForm.controls['password'].hasError('required')" class="alert alert-danger text-center">"Password" è richiesto</div>
+      <br>Password
+      <input type='password' [formControl] = "myForm.controls['password']" placeholder="Inserire la password" class="form-control ">
+      <div *ngIf="!myForm.controls['password'].valid && myForm.controls['password'].touched" class=" text-danger text-left">"Password" non è valido</div>
+      <div *ngIf="myForm.controls['password'].hasError('required') && myForm.controls['password'].touched" class=" text-danger text-left">"Password" è richiesto</div>
 
 
 
