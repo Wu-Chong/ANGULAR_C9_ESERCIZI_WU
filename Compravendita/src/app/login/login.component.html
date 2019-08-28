@@ -4,7 +4,7 @@
   <form [formGroup] = logForm class="text-left p-3 item1" (ngSubmit)="onLogin()" *ngIf="show">
 
        Username
-      <input type="user" [formControl] = "logForm.controls['user']" placeholder="User" class="form-control mb-4">
+      <input type="user" [formControl] = "logForm.controls['user']" placeholder="Username" class="form-control mb-4">
       <div *ngIf="!logForm.controls['user'].valid" class="alert alert-danger text-center">"User" non è valido</div>
       <div *ngIf="logForm.controls['user'].hasError('required')" class="alert alert-danger text-center">"User" è richiesto</div>
 

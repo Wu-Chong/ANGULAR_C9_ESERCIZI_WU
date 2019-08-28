@@ -13,10 +13,10 @@ export class RegComponent implements OnInit {
 
   constructor(public fb : FormBuilder){
     this.myForm = fb.group({
-        'nome': ['Inserire nome', Validators.required],
-        'cognome': ['Inserire cognome', Validators.required],
-        'user': ['Inserire username', Validators.required],
-        'email': ['Inserire email', Validators.required],
+        'nome': ['', Validators.required],
+        'cognome': ['', Validators.required],
+        'user': ['', Validators.required],
+        'email': ['', Validators.required],
         'password':['', Validators.required]
     });
   }

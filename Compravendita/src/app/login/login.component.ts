@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     logForm: FormGroup;
    constructor(fb : FormBuilder){
     this.logForm = fb.group({
-        'user': ['Inserire username', Validators.required],
+        'user': ['', Validators.required],
         'password':['', Validators.required]
     });
   }

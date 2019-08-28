@@ -1,0 +1,27 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+html, body, * {
+    font-family: 'Montserrat', 'sans-serif';
+    color: black;
+}
+
+header{
+  border: 1px  solid;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#title-header{
+  font-family: Montserrat;
+  font-size: 30px;
+  text-align: center;
+}
+
+.btn-login {
+  margin-top: -47px;
+  font-family: Montserrat;
+  color: black;
+  font-weight: 600;
+  font-size: 1.2em;
+  float: right;
+}
