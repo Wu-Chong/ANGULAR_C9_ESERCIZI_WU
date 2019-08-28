@@ -1,11 +1,15 @@
 <link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800'
 rel='stylesheet' type='text/css'>
 
-<header>
+<header class="border-primary">
   <p id="title-header">Oggetti</p>
   <button type="button" class="btn border border-primary btn-login text-primary"> Sign In </button>
  </header>
 
- <body>
-   <app-reg></app-reg>
- </body>
+<br>
+<br>
+<app-reg [utenteLista]="users"></app-reg> <!-- i valori registrati verranno aggiunti a users -->
+
+<ul>
+  <li *ngFor="let mockUtente of users">{{mockUtente.nome}} - {{mockUtente.cognome}}: {{mockUtente.username}}</li> <!-- instanzia una variabile che assumerà i valori contenuti in users-->
+</ul>

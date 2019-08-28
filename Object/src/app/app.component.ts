@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Utente } from './utente.model';
+import { UtenteGiaLoggato} from './mock-utente';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Object';
 
-  
+  users: Utente[];
+  UtenteLoggato: Utente;
+
+  constructor(){
+    this.users = UtenteGiaLoggato;
+  }
 }
