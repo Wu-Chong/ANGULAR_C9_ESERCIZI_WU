@@ -2,7 +2,7 @@
 rel='stylesheet' type='text/css'>
 
 <header class="border-success">
-  <p id="title-header">Oggetti</p>
+  <h1 id="title-header">Object</h1>
   <button type="button" class="btn border border-success btn-login text-success"> Sign In </button>
  </header>
 
@@ -11,6 +11,8 @@ rel='stylesheet' type='text/css'>
 
 <app-reg [utenteLista]="users"></app-reg> <!-- i valori registrati verranno aggiunti a users -->
 
-<ul>
-  <li *ngFor="let mockUtente of users">{{mockUtente.nome}} - {{mockUtente.cognome}}: {{mockUtente.username}}</li> <!-- instanzia una variabile che assumerà i valori contenuti in users-->
+<ul class="jumbotron">
+  <h1 class="text-center">Utenti Registrati </h1>
+  <h6 class="text-center">Nome - Cognome: Username</h6>
+  <li *ngFor="let mockUtente of users" class="text-center lista">{{mockUtente.nome}} - {{mockUtente.cognome}}: {{mockUtente.username}}</li> <!-- instanzia una variabile che assumerà i valori contenuti in users-->
 </ul>

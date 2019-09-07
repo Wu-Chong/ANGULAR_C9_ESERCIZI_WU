@@ -18,7 +18,6 @@ header{
 #title-header{
   font-family: Montserrat;
   font-weight: 500;
-  font-size: 30px;
   text-align: center;
 }
 
@@ -28,4 +27,8 @@ header{
   font-weight: 600;
   font-size: 1.2em;
   float: right;
+}
+
+.lista{
+  list-style-type: none;
 }
