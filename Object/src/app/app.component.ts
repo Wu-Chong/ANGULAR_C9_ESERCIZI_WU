@@ -15,5 +15,6 @@ export class AppComponent {
 
   constructor(){
     this.users = UtenteGiaLoggato;
+    this.UtenteLoggato = new Utente("", "","", "","");
   }
 }

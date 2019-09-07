@@ -17,4 +17,4 @@ rel='stylesheet' type='text/css'>
   <li *ngFor="let mockUtente of users" class="text-center lista">{{mockUtente.nome}} - {{mockUtente.cognome}}: {{mockUtente.username}}</li> <!-- instanzia una variabile che assumerà i valori contenuti in users-->
 </ul>
 
-<app-log id="login"> </app-log>
+<app-log [utenteLista]="users" [mockUtente] ="utenteLoggato" id="login"> </app-log>

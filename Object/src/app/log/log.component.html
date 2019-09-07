@@ -1,44 +1,29 @@
 <div class="contenitore jumbotron">
 <h1 class="text-center">Login</h1>
-  <form [formGroup] = "myForm" class="text-left p-3 item1" (ngSubmit)="onSubmit()">
-
-    <div class="form-row">
-
-      <div class="col">
-        Nome
-        <input [formControl] = "myForm.controls['nome']" placeholder="Inserire il nome" class="form-control">
-        <div *ngIf="!myForm.controls['nome'].valid && myForm.controls['nome'].touched " class=" text-danger text-left">"Nome" non è valido</div>
-        <div *ngIf="myForm.controls['nome'].hasError('required') && myForm.controls['nome'].touched" class="text-danger text-left">"Nome" è richiesto</div>
-      </div>
-
-      <div class="col">
-        Cognome
-        <input [formControl] = "myForm.controls['cognome']" placeholder="Inserire il cognome" class="form-control">
-        <div *ngIf="!myForm.controls['cognome'].valid && myForm.controls['cognome'].touched" class=" text-danger text-left">"Cognome" non è valido</div>
-        <div *ngIf="myForm.controls['cognome'].hasError('required') && myForm.controls['cognome'].touched" class=" text-danger text-left">"Cognome" è richiesto</div>
-      </div>
-    </div>
+  <form [formGroup] = "myLog" class="text-left p-3 item1" (ngSubmit)="onLog()" *ngIf="mostra">
 
        <br>Username
-      <input type="user" [formControl] = "myForm.controls['user']" placeholder="Inserire il username" class="form-control ">
-      <div *ngIf= "!myForm.controls['user'].valid && myForm.controls['user'].touched" class="text-danger text-left">"User" non è valido</div>
-      <div *ngIf="myForm.controls['user'].hasError('required') && myForm.controls['user'].touched" class=" text-danger text-left">"User" è richiesto</div>
-
-      <br>Email
-      <input type="email" [formControl] = "myForm.controls['email']" placeholder="Inserire l'email" class="form-control ">
-      <div *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].touched" class=" text-danger text-left">"Email" non è valido</div>
-      <div *ngIf="myForm.controls['email'].hasError('required') && myForm.controls['email'].touched" class=" text-danger text-left">"Email" è richiesto</div>
+      <input type="user" [formControl] = "myLog.controls['user']" placeholder="Inserire il username" class="form-control ">
+      <div *ngIf= "!myLog.controls['user'].valid && myLog.controls['user'].touched" class="text-danger text-left">"User" non è valido</div>
+      <div *ngIf="myLog.controls['user'].hasError('required') && myLog.controls['user'].touched" class=" text-danger text-left">"User" è richiesto</div>
 
 
       <br>Password
-      <input type='password' [formControl] = "myForm.controls['password']" placeholder="Inserire la password" class="form-control ">
-      <div *ngIf="!myForm.controls['password'].valid && myForm.controls['password'].touched" class=" text-danger text-left">"Password" non è valido</div>
-      <div *ngIf="myForm.controls['password'].hasError('required') && myForm.controls['password'].touched" class=" text-danger text-left">"Password" è richiesto</div>
+      <input type='password' [formControl] = "myLog.controls['password']" placeholder="Inserire la password" class="form-control ">
+      <div *ngIf="!myLog.controls['password'].valid && myLog.controls['password'].touched" class=" text-danger text-left">"Password" non è valido</div>
+      <div *ngIf="myLog.controls['password'].hasError('required') && myLog.controls['password'].touched" class=" text-danger text-left">"Password" è richiesto</div>
 
 
 
-    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!myForm.valid">Registrati</button>
-    <div *ngIf="!myForm.valid"></div>
+    <button class="btn btn-success btn-block mt-4" type="submit" [disabled]="!myLog.valid">Registrati</button>
+    <div *ngIf="!myLog.valid"></div>
 
   </form>
 </div>
+
+<div class="alert alert-danger" *ngIf="!corretto">Username o password errati!</div>
+<div *ngIf="!mostra">
+  <h1>Entrai nel paradiso meraviglia</h1>
+ <button (click)="onLogOut()" class="btn btn-danger">Logout</button>
+</div>
+
